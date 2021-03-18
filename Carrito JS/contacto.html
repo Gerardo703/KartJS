@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/js.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <link rel="stylesheet" href="css/tailwind.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+
+    <!--Fontawesome-->
+    <script src="https://kit.fontawesome.com/09ebd4977c.js" crossorigin="anonymous"></script>
+
+    <title>Carrito JS</title>
+</head>
+<body>
+    
+    <!-- Header-->
+    <header id="encabezado">
+    <nav id="navegacion">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">INFORMÁTICA Y CIA</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="index.html">Inicio</a></li>
+          </ul>
+        </div>
+    </header>
+    <!--Header End-->
+
+    <!--Section-->
+    <section id="content">
+        <aside id="aside">
+            <h2>Links de Interes</h2>
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="marcas.html">Marcas</a>
+                </li>
+                <li>
+                    <a href="contacto.html" hidden>Contacto</a>
+                </li>
+            </ul>
+        </aside>
+
+        <!--Articles-->
+        <form id="formulario">
+            <article class="principal">
+                <div class="image-wrap">
+                    <i class="far fa-4x fa-address-card"></i>
+                    <h5>Ingrese Datos Personales</h5>
+                </div>
+                <div class="formulario-info">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                    <textarea class="border" name="contenido" id="mensaje" cols="40" rows="40"></textarea>
+                    
+                    <!--Spinner-->
+                    <div id="spinner" class="spinner">
+                      <div class="rect1"></div>
+                      <div class="rect2"></div>
+                      <div class="rect3"></div>
+                      <div class="rect4"></div>
+                      <div class="rect5"></div>
+                    </div>
+
+                    <button id="btn-formulario" class="btn waves-effect waves-light" type="submit" >Enviar</button>
+                </div>
+            </article>
+          </form>
+        <!--Articles End-->
+    </section>
+    <!--Section End-->
+
+        <!--Footer-->
+        <footer class="page-footer black">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">INFORMÁTICA Y CIA</h5>
+                  <p class="grey-text text-lighten-4">Tus productos a la puerta de tu casa en tiempo record! </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Social Media</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!"><i id="facebook" class="fab fa-2x fa-facebook-square"></i> Facebook</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><i id="instagram" class="fab fa-2x fa-instagram"></i> Instagram</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!"><i id="twitter" class="fab fa-2x fa-twitter"></i></a> Twitter</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+                &copy; 2021 Gerardo Vega 
+              </div>
+            </div>
+          </footer>
+        <!--Footer End-->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- <script src="js/app.js"></script> -->
+    <script src="js/formulario.js"></script>
+</body>
+</html>

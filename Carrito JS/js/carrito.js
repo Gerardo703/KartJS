@@ -12,6 +12,13 @@ function cargarEventos(){
     // Agregar un producto al darle click a 'Agregar al Carrito'
     listaProductos.addEventListener('click', agregarProducto);
 
+    //Cuando el documento este listo
+    document.addEventListener('DOMContentLoaded', () => {
+        productosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        crearCarritoHTML();
+    })
+
     // Eliminar producto del carrito
     carrito.addEventListener('click', eliminarProducto);
 
@@ -109,7 +116,15 @@ function crearCarritoHTML(){
         // Agrego el HTML al tbody
         contenedorCarrito.appendChild(row);
     });
+
+    //Sincronizar con LocalStorage
+    sincronizarLocalStorage();
 };
+
+//Funcion para guardar los datos en el local Storage
+function sincronizarLocalStorage(){
+    localStorage.setItem('carrito', JSON.stringify(productosCarrito));
+}
 
 // Limpiar el HTML
 function clearHTML(){

@@ -1,6 +1,7 @@
 # KartJS
 
 <img src="https://img.shields.io/badge/-Javascript-black?style=for-the-badge&logo=java" >
+<img src="https://img.shields.io/badge/-html-black?style=for-the-badge&logo=html5">
 
 Pryecto que simula un carrito de compras (v 1.0), utilizando:
 <ul>

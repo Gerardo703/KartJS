@@ -6,190 +6,176 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/js.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- <link rel="stylesheet" href="css/tailwind.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/estilos.css">
 
-    <!--Fontawesome-->
-    <script src="https://kit.fontawesome.com/09ebd4977c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 
     <title>Carrito JS</title>
 </head>
 <body>
     
+    <div class="container-fluid">
     <!-- Header-->
-    <header id="encabezado">
-    <nav id="navegacion">
-        <div class="nav-wrapper">
-          <a href="#" class="brand-logo">INFORMÁTICA Y CIA</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="index.html">Inicio</a></li>
-            <li class="submenu">
-                <a href="#"><i class="material-icons">shopping_cart</i></a>
-                <div id="carrito">
-                    <table id="lista-carrito" class="u-full-width">
-                        <thead >
-                            <tr>
-                                <th>Imagen</th>
-                                <th>Nombre</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th><i class=""></i></th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <!-- class=" button u-full-width" -->
-                    <a href="#" id="vaciar-carrito" class="waves-effect waves-light btn">Vaciar Carrito </a>
+    <header id="encabezado" class="row sticky-top">
+        <div class="col">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid ">
+                    <a class="navbar-brand disabled">INFORMÁTICA Y CIA</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Links de Interes
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#"></a>
+                                        <li  class="mb-2">
+                                            <a class="dropdown-item" href="marcas.html">Marcas</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="contacto.html">Contacto</a>
+                                        </li>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Ver Carrito
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li>
+                                        <a class="dropdown-item" href="#"></a>
+                                        <div id="carrito" class="p-2">
+                                            <table id="lista-carrito" class="table-responsive table-hover">
+                                                <thead >
+                                                    <tr>
+                                                        <th>Imagen</th>
+                                                        <th>Nombre</th>
+                                                        <th>Precio</th>
+                                                        <th>Cantidad</th>
+                                                        <th><i class=""></i></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody></tbody>
+                                            </table>
+                                                <a href="#" id="vaciar-carrito" class="btn btn-dark">Vaciar Carrito</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </li>
-          </ul>
+            </nav>
         </div>
     </header>
     <!--Header End-->
 
-    <!--Section-->
-    <section id="content">
-        <aside id="aside">
-            <h2>Links de Interes</h2>
-            <ul>
-                <li>
-                    <a href="marcas.html">Marcas</a>
-                </li>
-                <li>
-                    <a href="contacto.html">Contacto</a>
-                </li>
-            </ul>
-        </aside>
+    <!-- Main -->
 
-        <!--Articles-->
-        <div id="productos">
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/asus.jpg" />
+    <div id="productos" class="row mt-3">
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="./img/msi.jpg" class="card-img-top img-fluid" alt="">
+                <div class="card-body producto-info">
+                    <h4 class="card-title">Notebook MSI</h4>
+                    <p>MSI I7 1TB SSD, 12GB RAM DDR6</p>
+                    <p class="precio"><strong>U$s 1450</strong></p>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="1">Agregar al Carrito</a>
                 </div>
-                <div class="producto-info">
-                    <h4>Notebook Asus</h4>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="./img/asus.jpg" class="card-img-top img-fluid" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Notebook Asus</h4>
                     <p>Asus ROG I7 1TB SSD, 12GB RAM DDR6</p>
                     <p class="precio"><strong>U$s 1450</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="1">Agregar al Carrito</a>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="2">Agregar al Carrito</a>
                 </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/hp.jpg" width="270" height="270" />
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook HP</h4>
-                    <p>Hp Gamer I7 1TB SSD, 12GB RAM DDR6</p>
-                    <p class="precio"><strong>U$s 1150</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="2">Agregar al Carrito</a>
-                </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/msi.jpg" />
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook MSI</h4>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="img/msi.jpg" class="card-img-top img-fluid" alt=""/>
+                <div class="card-body">
+                    <h4 class="card-title">Notebook MSI</h4>
                     <p>MSI I7 1TB SSD, 12GB RAM DDR6</p>
                     <p class="precio"><strong>U$s 2450</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="3">Agregar al Carrito</a>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="3">Agregar al Carrito</a>
                 </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/huaweii.png" />
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook MateBook </h4>
-                    <p>Huawei I7 1TB SSD, 16GB RAM DDR6</p>
-                    <p class="precio"><strong>U$s 2950</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="4">Agregar al Carrito</a>
-                </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/macbook.jpg" />
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook MacBook Pro</h4>
-                    <p>Notebook Apple Macbook Pro Mvvj2 I7 512gb 16gb 5300</p>
-                    <p class="precio"><strong>U$s 3450</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="5">Agregar al Carrito</a>
-                </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/asusduo.jpg"  width="257" height="257"/>
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook Asus duo</h4>
-                    <p>Asus DUO I7 1TB SSD, 16GB RAM DDR6</p>
-                    <p class="precio"><strong>U$s 2790</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="6">Agregar al Carrito</a>
-                </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/acer.jpg"  width="257" height="257"/>
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook ACER</h4>
-                    <p>ACER Gamer I7 1TB SSD, 16GB RAM DDR6</p>
-                    <p class="precio"><strong>U$s 1450</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="7">Agregar al Carrito</a>
-                </div>
-            </article>
-            <article class="producto">
-                <div class="image-wrap">
-                    <img src="img/lenovo.jpg" width="197" height="197"/>
-                </div>
-                <div class="producto-info">
-                    <h4>Notebook Lenovo Legion</h4>
-                    <p>Notebook Gamer Lenovo I7 8gb 1tb+512gb Ssd 15.6 Gtx 1650 4gb</p>
-                    <p class="precio"><strong>U$s 1780</strong></p>
-                    <a id="btn-carrito" class="btn waves-effect waves-light agregar-carrito" data-id="8">Agregar al Carrito</a>
-                </div>
-            </article>
+            </div>
         </div>
-        <!--Articles End-->
-    </section>
-    <!--Section End-->
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="./img/msi.jpg" class="card-img-top img-fluid" alt="">
+                <div class="card-body producto-info">
+                    <h4 class="card-title">Notebook MSI</h4>
+                    <p>MSI I7 1TB SSD, 12GB RAM DDR6</p>
+                    <p class="precio"><strong>U$s 1450</strong></p>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="4">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="./img/asus.jpg" class="card-img-top img-fluid" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Notebook Asus</h4>
+                    <p>Asus ROG I7 1TB SSD, 12GB RAM DDR6</p>
+                    <p class="precio"><strong>U$s 1450</strong></p>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="5">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-sm-6 col-md-4 mb-3">
+            <div class="card producto">
+                <img src="img/msi.jpg" class="card-img-top img-fluid" alt=""/>
+                <div class="card-body">
+                    <h4 class="card-title">Notebook MSI</h4>
+                    <p>MSI I7 1TB SSD, 12GB RAM DDR6</p>
+                    <p class="precio"><strong>U$s 2450</strong></p>
+                    <a id="btn-carrito" class="btn btn-dark d-grid gap-2 agregar-carrito" data-id="6">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main End -->
+    
 
     <!--Footer-->
     <footer class="page-footer black">
-        <div class="container">
+        <div class="container-fluid text-white text-center p-2 bg-dark">
           <div class="row">
-            <div class="col l6 s12">
+            <div class=" col-12 col-sm-6">
               <h5 class="white-text">INFORMÁTICA Y CIA</h5>
-              <p class="grey-text text-lighten-4">Tus productos a la puerta de tu casa en tiempo record! </p>
+              <p>Tus productos a la puerta de tu casa en tiempo record! </p>
+              <p>&copy; 2021 Gerardo Vega</p>
             </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Social Media</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!"><i id="facebook" class="fab fa-2x fa-facebook-square"></i> Facebook</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!"><i id="instagram" class="fab fa-2x fa-instagram"></i> Instagram</a></li>
-                <li><a class="grey-text text-lighten-3" href="#!"><i id="twitter" class="fab fa-2x fa-twitter"></i></a> Twitter</li>
-              </ul>
+            <div class="col-12 col-sm-6">
+              <h5>Social Media</h5>
+                <p><img class="text-white" src="./img/facebook (2).svg"></img> <a id="facebook" class="text-white" href="#">Facebook</a></p>
+                <p><img class="text-white" src="./img/instagram.svg"></img> <a id="instagram" class="text-white" href="#">Instagram</a></p>
+                <p><img class="text-white" src="./img/twitter.svg"> <a  id="twitter" class="text-white" href="#">Twitter</a></p>
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">
-            &copy; 2021 Gerardo Vega 
-          </div>
-        </div>
-      </footer>
+    </footer>
     <!--Footer End-->
+    
+    </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
     <script src="js/carrito.js"></script>
     
 </body>

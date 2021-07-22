@@ -26,7 +26,7 @@ function cargarEventos(){
     vaciarCarritoBtn.addEventListener('click', () => {
     productosCarrito = []; // Resetear el arreglo
     clearHTML(); // Limpiar el HTML
-    })
+    });
 }
 
 // Funciones
@@ -109,7 +109,8 @@ function crearCarritoHTML(){
             <td>${precio}</td>
             <td>${cantidad}</td>
             <td>
-                <a href="#" class="borrar-producto" data-id="${id}"> X </a>
+                <button  type="button" data-id="${id}" class="borrar-producto btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                
             </td>
         `;
 

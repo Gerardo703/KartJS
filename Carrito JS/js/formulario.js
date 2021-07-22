@@ -43,16 +43,17 @@ function validarFormulario(e){
     if( e.target.value.length > 0 ){
         
         //Eliminar los errores
-        const error = document.querySelector('p.error');
+        const error = document.querySelector('p.alert');
         if(error){
             error.remove();
         }
-        e.target.classList.remove('border', 'border-red-500'); // elimino la clase red
-        e.target.classList.add('border', 'bg-green-200'); // Agrego una clase de Tailwind
+
+        e.target.classList.remove('border', 'border-danger'); // elimino la clase red
+        e.target.classList.add('border', 'border-success'); // Agrego una clase de Bootstrap
 
     }else{
-        e.target.classList.add('border', 'border-red-500'); // elimino la clase red
-        e.target.classList.remove('border', 'bg-green-200'); // Agrego una clase de Tailwind
+        e.target.classList.add('border', 'border-danger'); // elimino la clase red
+        e.target.classList.remove('border', 'border-success'); // Agrego una clase de Bootstrap
         mostrarErrores('Todos los campos son Obligatorios')
     }
 
@@ -61,17 +62,17 @@ function validarFormulario(e){
         if(expRegular.test( e.target.value )){
             
             //Eliminar los errores
-            const error = document.querySelector('p.error');
+            const error = document.querySelector('p.alert');
             if(error){
                 error.remove();
             }
-            e.target.classList.remove('border', 'border-red-500'); // elimino la clase red
-            e.target.classList.add('border', 'bg-green-200'); // Agrego una clase de Tailwind
+            e.target.classList.remove('border', 'border-danger'); // elimino la clase red
+            e.target.classList.add('border', 'border-success'); // Agrego una clase de Tailwind
            
         }else{
-            e.target.classList.add('border', 'bg-red-200'); // elimino la clase red
-            e.target.classList.remove('border', 'border-green-500'); // Agrego una clase de Tailwind
-            mostrarErrores('Campo formato solicitad erroneo');
+            e.target.classList.add('border', 'border-danger'); // elimino la clase red
+            e.target.classList.remove('alert', 'alert-success'); // Agrego una clase de Tailwind
+            mostrarErrores('Campo formato solicitado erroneo');
         }
     }
 
@@ -82,11 +83,12 @@ function validarFormulario(e){
 }
 
 function mostrarErrores(mensaje){
+    
     const mensajeError = document.createElement('p');
     mensajeError.textContent = mensaje;
-    mensajeError.classList.add('border', 'border-red-500', 'w-40', 'ml-20px', 'background-red-100', 'text-red-500', 'p-3', 'mt-5', 'text-center', 'error');
+    mensajeError.classList.add('alert', 'alert-danger');
 
-    const errores = document.querySelectorAll('.error');
+    const errores = document.querySelectorAll('.alert');
 
     if(errores.length === 0){
         formulario.appendChild(mensajeError);
@@ -106,19 +108,18 @@ function enviarMail(e){
         // Creo Un parrafo para mostrar el mensaje
         const parrafo = document.createElement('p');
         parrafo.textContent = 'Mensaje enviado con éxito';
-        parrafo.classList.add('text-center', 'p-2', 'w-40','my-10','bg-green-500', 'text-white', 'font-bold', 'uppercase', 'parrafo' );
+        parrafo.classList.add('alert', 'alert-success');
         
         //Colocar el parrafo antes del Spinner
         formulario.insertBefore(parrafo, null);
 
         setTimeout(() => {
             parrafo.remove(); // Eliminamos el párrafo que contiene el mensajede éxito
-            formulario.classList.remove('border', 'border-red-500');
+            formulario.classList.remove('alert', 'alert-danger');
             resetarFormulario();
-        }, 3000);
+        }, 1500);
 
-
-    }, 3000);
+    }, 1500);
 }
 
 function resetarFormulario(){

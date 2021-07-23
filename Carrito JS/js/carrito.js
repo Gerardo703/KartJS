@@ -81,7 +81,7 @@ function leerDatosProducto(producto){
                 return producto; // Objeto con los que no son duplicados
             }
         } );
-        
+
         productosCarrito = [...productos];
     }else{
         //Agrego los elementos al carrito
@@ -117,7 +117,7 @@ function crearCarritoHTML(){
         `;
 
         const notificacion = document.createElement('span');
-        noti.innerHTML = `<span class="position-absolute top-0 start-100 mt-3 ml-3 translate-middle badge rounded-pill bg-danger">${cantidad}</span>`
+        noti.innerHTML = `<span class="position-absolute top-0 start-100 mt-3 ml-3 translate-middle badge rounded-pill bg-danger">${producto.cantidad}</span>`
         // Agrego el HTML al tbody
         
         contenedorCarrito.appendChild(row);

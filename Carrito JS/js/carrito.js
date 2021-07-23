@@ -72,24 +72,24 @@ function leerDatosProducto(producto){
     if(existeProducto){
         
         // Actualizo la Cantidad
-        const productos = productosCarrito.map( (producto) => {
+        const productos = productosCarrito.map( producto => {
+            
             if(producto.id === datosProducto.id){
                 producto.cantidad++;
-                
                 return producto; // Objeto Actualizado
             }else{
                 return producto; // Objeto con los que no son duplicados
             }
         } );
-
+        
         productosCarrito = [...productos];
     }else{
         //Agrego los elementos al carrito
         productosCarrito = [...productosCarrito, datosProducto];
+        
     }
     
     // console.log(productosCarrito);
-
     crearCarritoHTML();
 
 }

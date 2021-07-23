@@ -67,11 +67,11 @@ function validarFormulario(e){
                 error.remove();
             }
             e.target.classList.remove('border', 'border-danger'); // elimino la clase red
-            e.target.classList.add('border', 'border-success'); // Agrego una clase de Tailwind
+            e.target.classList.add('border', 'border-success'); // Agrego una clase de Bootstrap
            
         }else{
             e.target.classList.add('border', 'border-danger'); // elimino la clase red
-            e.target.classList.remove('alert', 'alert-success'); // Agrego una clase de Tailwind
+            e.target.classList.remove('alert', 'alert-success'); // Agrego una clase de Bootstrap
             mostrarErrores('Campo formato solicitado erroneo');
         }
     }
@@ -115,7 +115,7 @@ function enviarMail(e){
 
         setTimeout(() => {
             parrafo.remove(); // Eliminamos el párrafo que contiene el mensajede éxito
-            formulario.classList.remove('alert', 'alert-danger');
+            formulario.classList.remove('border', 'border-success');
             resetarFormulario();
         }, 1500);
 

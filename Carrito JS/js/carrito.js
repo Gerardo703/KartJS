@@ -3,6 +3,7 @@ const carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const listaProductos = document.querySelector('#productos');
+const noti = document.querySelector('#notificacion')
 let productosCarrito = [];
 
 cargarEventos();
@@ -69,10 +70,12 @@ function leerDatosProducto(producto){
     // Revisar si el elemento existe en el carrito
     const existeProducto = productosCarrito.some( producto => producto.id === datosProducto.id );
     if(existeProducto){
+        
         // Actualizo la Cantidad
-        const productos = productosCarrito.map( producto => {
+        const productos = productosCarrito.map( (producto) => {
             if(producto.id === datosProducto.id){
                 producto.cantidad++;
+                
                 return producto; // Objeto Actualizado
             }else{
                 return producto; // Objeto con los que no son duplicados
@@ -80,13 +83,12 @@ function leerDatosProducto(producto){
         } );
 
         productosCarrito = [...productos];
-
     }else{
         //Agrego los elementos al carrito
         productosCarrito = [...productosCarrito, datosProducto];
     }
     
-    //console.log(productosCarrito);
+    // console.log(productosCarrito);
 
     crearCarritoHTML();
 
@@ -110,12 +112,17 @@ function crearCarritoHTML(){
             <td>${cantidad}</td>
             <td>
                 <button  type="button" data-id="${id}" class="borrar-producto btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                
             </td>
+                
         `;
 
+        const notificacion = document.createElement('span');
+        noti.innerHTML = `<span class="position-absolute top-0 start-100 mt-3 ml-3 translate-middle badge rounded-pill bg-danger">${cantidad}</span>`
         // Agrego el HTML al tbody
+        
         contenedorCarrito.appendChild(row);
+        noti.appendChild(notificacion);
+        
     });
 
     //Sincronizar con LocalStorage
@@ -131,5 +138,9 @@ function sincronizarLocalStorage(){
 function clearHTML(){
     while(contenedorCarrito.firstChild){
         contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+    }
+
+    while(noti.firstChild){
+        noti.removeChild(noti.firstChild);
     }
 }
